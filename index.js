@@ -10,9 +10,11 @@ app.use(
 );
 
 app.get("/proxy", async (req, res) => {
+    const {from,to,date}=req.query;
+    
   var config = {
     method: "get",
-    url: "https://indian-railway-api.cyclic.app/trains/gettrainon?from=BKSC&to=DHN&date=12-03-2023",
+    url: `https://indian-railway-api.cyclic.app/trains/gettrainon?from=${from}&to=${to}&date=${date}`,
     headers: {},
   };
 
